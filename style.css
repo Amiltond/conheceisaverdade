@@ -1,0 +1,119 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-height: 45vh;
+    display: block;
+    background-color: black;
+    object-fit: contain;
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 768px) {
+    img {
+        height: 50vh;
+        object-fit: cover;
+    }
+}
+
+div.tituloprincipal {
+    height: 40px; 
+    width: 100%;
+    background-color: #333131ff;
+    display: flex;
+    align-items: center;    /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente o conjunto */
+    gap: 15px;              /* Cria um espaço entre o ícone e o texto */
+}
+
+div.tituloprincipal span{
+    color: white;
+    padding-right: 10px;
+}
+
+div.tituloprincipal p{
+    padding-top: 15px;
+    padding-left: 5px;
+    color: white;
+    font-size: 20px;
+    margin-top: 0px;
+    text-align: left;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    gap: 0; /* Removido o espaço entre as abas */
+}
+
+.navbar li {
+    flex: 1;
+    height: 40px; 
+    border-radius: 0; /* Remove os cantos arredondados */
+    transition: 0.3s;
+    overflow: visible; /* Permite que o ponto grande apareça sem cortes */
+}
+
+.navbar li a {
+    display: flex;
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem;      /* Tamanho dos pontos */
+    font-weight: bold;
+    line-height: 0;         /* Impede que a linha do texto empurre o ponto */
+}
+
+/* Cores Sólidas (Padrão repetível) */
+.navbar li:nth-child(6n+1) { background-color: #ff0000; }
+.navbar li:nth-child(6n+2) { background-color: #ff8c00; }
+.navbar li:nth-child(6n+3) { background-color: #ffeb3b; }
+.navbar li:nth-child(6n+4) { background-color: #4caf50; }
+.navbar li:nth-child(6n+5) { background-color: #2196f3; }
+
+/* Contraste para aba amarela */
+.navbar li:nth-child(6n+3) a { color: black; }
+
+.navbar li:hover {
+    filter: brightness(1.2);
+}
+
+#aba-vermelha { background-color: #ff0000; }
+#aba-laranja { background-color: #ff8c00; }
+#aba-amarela { background-color: #ffeb3b; }
+#aba-verde { background-color: #4caf50; }
+#aba-azul { background-color: #2196f3; }
+
+
+#visualizador-paginas {
+    width: 100%;
+    min-height: 100vh; 
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+    border: none;           /* Garante que não haja bordas */
+    margin-top: -1px;       /* Truque de 1px para sobrepor qualquer linha residual */
+}
+
+#texto-pagina {
+    color: white;
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}

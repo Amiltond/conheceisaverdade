@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = stylesheet href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+</head>
+<body>
+    <div class="tituloprincipal">
+        <p>CONHECEIS A VERDADE.</p>
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </div>
+
+    <img src="img/capasite2.png">
+
+    <header class="hero-header">
+  <nav class="navbar">
+    <ul>
+      <li id="aba-vermelha"><a href="#" onclick="abrirPagina('aba-vermelha', 'CONTEÚDO VERMELHO')">.</a></li>
+      <li id="aba-laranja"><a href="#" onclick="abrirPagina('aba-laranja', 'CONTEÚDO LARANJA')">..</a></li>
+      <li id="aba-amarela"><a href="#" onclick="abrirPagina('aba-amarela', 'CONTEÚDO AMARELO')">...</a></li>
+      <li id="aba-verde"><a href="#" onclick="abrirPagina('aba-verde', 'CONTEÚDO VERDE')">....</a></li>
+      <li id="aba-azul"><a href="#" onclick="abrirPagina('aba-azul', 'CONTEÚDO AZUL')">.....</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="visualizador-paginas">
+  <div id="texto-pagina">SELECIONE UMA ABA ACIMA</div>
+</div>
+
+<script src="script.js">
+function abrirPagina(idDaAba, texto) {
+    // 1. Seleciona a aba pelo ID
+    const aba = document.getElementById(idDaAba);
+    
+    // 2. Pega a cor real que está aplicada nela
+    const corParaAplicar = window.getComputedStyle(aba).backgroundColor;
+    
+    // 3. Seleciona a página e o texto
+    const paginaPrincipal = document.getElementById('visualizador-paginas');
+    const containerTexto = document.getElementById('texto-pagina');
+    
+    // 4. Aplica a cor e o novo texto
+    paginaPrincipal.style.backgroundColor = corParaAplicar;
+    containerTexto.innerText = texto;
+
+    // 5. Ajuste automático de contraste para o texto
+    if (idDaAba === 'aba-amarela') {
+        containerTexto.style.color = "black";
+    } else {
+        containerTexto.style.color = "white";
+    }
+}
+</script>
+</script>
+</body>
+</html>
